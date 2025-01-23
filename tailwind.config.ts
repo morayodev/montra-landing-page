@@ -11,8 +11,19 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        primary: {
+          DEFAULT: "#223872", // Base color
+          blue: "#223872", // Dark variant
+        },
+        secondary: {
+          default: "#4ABCEB",
+        },
+        tertiary: {
+          default: "#F6F9FC",
+        },
       },
     },
   },
+
   plugins: [],
 } satisfies Config;

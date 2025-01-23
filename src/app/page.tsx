@@ -1,101 +1,109 @@
+import Typography from "@/components/ui/typography";
 import Image from "next/image";
+import Iphone15 from "../../public/Group 60750.png";
+import google from "../../public/Mobile app store badge.png";
+import logo from "../../public/MONTRA LOGO.png";
+import apple from "../../public/apple.png";
+import personal from "../../public/personal.png";
+
+import { FaApple, FaChevronRight } from "react-icons/fa";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="bg-[#fff] w-[100%] ">
+      <div className="max-w-[1200px]  mx-auto">
+        <nav className="flex items-center justify-between text-primary-blue ">
+          <div className="flex items-center gap-5 justify-between ">
+            <Image src={logo} alt="Logo" />
+            <Typography text="Products" variant="p" className="hover:text-secondary-default font-semibold" />
+            <Typography text="Solution" variant="p" className="hover:text-secondary-default font-semibold" />
+            <Typography text="Platform" variant="p" className="hover:text-secondary-default font-semibold" />
+          </div>
+          <div className="flex items-center gap-5 justify-between">
+            {" "}
+            <Typography text="Nigeria" variant="p" className="hover:text-secondary-default font-semibold" />
+            <Typography text="Company" variant="p" className="hover:text-secondary-default font-semibold" />
+            <Typography text="Resources" variant="p" className="hover:text-secondary-default font-semibold" />
+            <Typography text="Help" variant="p" className="hover:text-secondary-default font-semibold" />
+          </div>
+        </nav>
+        <section>
+          <div className="flex justify-between py-32">
+            <div className="w-2/4">
+              <Typography
+                text="Single app to manage all your Personal & Business finances"
+                variant="h1"
+                className=" text-primary-blue font-bold leading-[80px]"
+              />
+              <Typography
+                text="Simply download Montra app to set-up your Montra Personal Account to access Marketplaces for multiparty payments & Lending Products"
+                variant="p"
+                className="w-[75%] text-primary-blue font-normal my-7"
+              />
+              <div className="flex gap-5">
+                {/* <button className="border-[#000] border  rounded-lg  px-3">
+                  <div className="flex items-center gap-1">
+                    <FaApple size={25} className="text-black" />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+                    <div>
+                      <p className="text-[10px] font-semibold text-black leading-none text-left">Download on</p>
+                      <p className="text-[18px]  font-bold text-black leading-none">App Store</p>
+                    </div>
+                  </div>
+                </button> */}
+
+                <Image src={apple} alt="apple" />
+                <Image src={google} alt="playstore" />
+              </div>
+            </div>
+
+            <div className="w-2/4 grid place-content-center">
+              <Image src={Iphone15} alt="Picture of the author" />
+            </div>
+          </div>
+        </section>
+      </div>
+
+      {/* //second section */}
+      <div className="bg-tertiary-default">
+        <div className="max-w-[1200px]  mx-auto ">
+          <div className="flex justify-between py-32">
+            <div className="w-[35%]">
+              <Typography variant="p" text="Montra - Personal" className="pb-4 text-secondary-default font-semibold" />
+
+              <Typography
+                text="Secure way of accessing world of Payments"
+                variant="h2"
+                className=" text-primary-blue font-bold leading-[80px]"
+              />
+              <Typography
+                text="Secured with 2FA through your Montra Soft Token, you can now pay using variety of Payment methods using Montra Accounts, Bank Accounts & Cards you have linked on Montra App and Installments by borrowing loans from our Lending Partners."
+                variant="p"
+                className="font-normal my-4 text-[#425466]"
+              />
+              <button className="flex items-center gap-2 justify-center bg-secondary-default text-white px-3 py-1 rounded-md">
+                <span>Explore payments</span>{" "}
+                <span>
+                  {" "}
+                  <FaChevronRight size={15} className="" />
+                </span>
+              </button>
+              <div className="mt-10 mb-5">
+                <Image src={personal} alt="personal" />
+              </div>
+              <Typography
+                text="Simply scan the QR codes of our Merchants or Tap & Pay on our Merchant’s app with your Debit & Credit Cards or use your Debit & Credit cards on POS issued by Montra to our merchants."
+                variant="p"
+                className="text-[#425466]"
+              />
+            </div>
+
+            <div className=" grid place-content-center">
+              <Image src={Iphone15} alt="Picture of the author" />
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
     </div>
   );
 }
