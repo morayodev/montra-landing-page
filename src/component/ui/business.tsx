@@ -22,7 +22,7 @@ export default function BusinessSection() {
     if (!hoveredIndex) {
       const timer = setInterval(() => {
         setActiveIndex((prevState) => (prevState + 1) % images.length);
-      }, 3000);
+      }, 2000);
       return () => clearInterval(timer);
     }
   }, [hoveredIndex, images.length]);

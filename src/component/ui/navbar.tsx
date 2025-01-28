@@ -1,9 +1,9 @@
 import Typography from "@/component/ui/typography";
 import Image from "next/image";
 import React from "react";
-import google from "../../../public/Mobile app store badge.png";
-import logo from "../../../public/MONTRA LOGO.png";
-import apple from "../../../public/apple.png";
+import google from "../../../public/google (2).svg";
+import logo from "../../../public/MONTRA LOGO.svg";
+import apple from "../../../public/apple.svg";
 import Iphone15 from "../../../public/iphone15.svg";
 
 export default function NavBar() {
