@@ -1,9 +1,9 @@
 import Typography from "@/component/ui/typography";
 import Image from "next/image";
 import React from "react";
-import Iphone15 from "../../../public/Group 60750.png";
+import Iphone15 from "../../../public/iphone15.svg";
 
-import personal from "../../../public/personal.png";
+import personal from "../../../public/personal.svg";
 import { FaChevronRight } from "react-icons/fa";
 
 export default function Hero() {
@@ -29,7 +29,7 @@ export default function Hero() {
               variant="p"
               className="font-normal my-4 text-[#425466]"
             />
-            <button className="flex items-center gap-2 justify-center bg-secondary-default text-white px-3 py-1 rounded-md">
+            <button className="text-[12px] flex items-center gap-2 justify-center bg-secondary-default text-white px-3 py-1 rounded-md">
               <span>Explore payments</span>{" "}
               <span>
                 {" "}
@@ -62,7 +62,7 @@ export default function Hero() {
               variant="p"
               className="font-normal my-4 text-[#425466]"
             />
-            <button className="flex items-center gap-2 justify-center bg-secondary-default text-white px-3 py-1 rounded-md">
+            <button className="text-[12px] flex items-center gap-2 justify-center bg-secondary-default text-white px-3 py-1 rounded-md">
               <span>Explore lending</span>{" "}
               <span>
                 {" "}

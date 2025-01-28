@@ -4,7 +4,7 @@ import React from "react";
 import google from "../../../public/Mobile app store badge.png";
 import logo from "../../../public/MONTRA LOGO.png";
 import apple from "../../../public/apple.png";
-import Iphone15 from "../../../public/Group 60750.png";
+import Iphone15 from "../../../public/iphone15.svg";
 
 export default function NavBar() {
   return (

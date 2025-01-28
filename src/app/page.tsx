@@ -1,3 +1,4 @@
+"use client";
 import BusinessSection from "@/component/ui/business";
 import Hero from "@/component/ui/hero";
 import NavBar from "@/component/ui/navbar";
