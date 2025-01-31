@@ -1,0 +1,56 @@
+<!-- <svg width="531" height="362" viewBox="0 0 531 362" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 240.5V299C1.16667 302 3.9 307.9 13.5 307.5C23.1 307.1 74.5 307.333 99 307.5M99 307.5L195 313C197.5 313 204.5 313 212.5 313C220.5 313 222.167 319.333 222 322.5C222 334.1 222 342.5 222 349.5C222 356.5 223.5 361 232 361C238.8 361 242.167 361 243 361H339H422C426.667 361 436 358.8 436 350C436 341.2 436 273.167 436 240M99 307.5L195 298H212.5C217 298 222 296.1 222 282.5C222 268.9 222 97.1667 222 10.5C222 7 226.4 1.5 234 1.5C241.6 1.5 243.167 1.5 243 1.5H339.5H420C424 1.66667 432 5.1 432 17.5C432 29.9 432 107 432 144V190.5H496C499.167 190.5 505.5 192.6 505.5 201C505.5 209.4 505.5 269.833 505.5 299C505.167 303.667 507 313 517 313C527 313 530.5 313 531 313" stroke="url(#paint0_radial_3288_7970)" stroke-width="1.5"/>
+<defs>
+<radialGradient id="paint0_radial_3288_7970" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(266 181.25) rotate(90) scale(179.75 265)">
+<stop offset="0.259" stop-color="#5FBFF1"/>
+<stop offset="1" stop-color="#48FE66"/>
+</radialGradient>
+</defs>
+</svg> -->
+
+
+
+<svg width="531" height="362" viewBox="0 0 531 362" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path 
+    d="M1 240.5V299C1.16667 302 3.9 307.9 13.5 307.5C23.1 307.1 74.5 307.333 99 307.5M99 307.5L195 313C197.5 313 204.5 313 212.5 313C220.5 313 222.167 319.333 222 322.5C222 334.1 222 342.5 222 349.5C222 356.5 223.5 361 232 361C238.8 361 242.167 361 243 361H339H422C426.667 361 436 358.8 436 350C436 341.2 436 273.167 436 240M99 307.5L195 298H212.5C217 298 222 296.1 222 282.5C222 268.9 222 97.1667 222 10.5C222 7 226.4 1.5 234 1.5C241.6 1.5 243.167 1.5 243 1.5H339.5H420C424 1.66667 432 5.1 432 17.5C432 29.9 432 107 432 144V190.5H496C499.167 190.5 505.5 192.6 505.5 201C505.5 209.4 505.5 269.833 505.5 299C505.167 303.667 507 313 517 313C527 313 530.5 313 531 313" 
+    stroke="url(#paint0_radial_3288_7970)" 
+    stroke-width="1.5"
+    stroke-dasharray="1500"
+    stroke-dashoffset="1500"
+  >
+    <!-- <animate 
+      attributeName="stroke-dashoffset" 
+      from="1500" 
+      to="0" 
+      dur="3.5s" 
+      fill="freeze"
+    /> -->
+
+
+       <animate
+      attributeName="stroke-dashoffset"
+      from="1500"
+      to="0"
+      dur="3.5s"
+      fill="freeze"
+     begin="4.8s"
+
+    />
+  <animate
+      attributeName="opacity"
+      from="1"
+      to="0"
+      begin="7s"
+      dur="1s"
+      fill="freeze"
+    />
+    
+  </path>
+  <defs>
+    <radialGradient id="paint0_radial_3288_7970" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(266 181.25) rotate(90) scale(179.75 265)">
+      <stop offset="0.259" stop-color="#5FBFF1"/>
+      <stop offset="1" stop-color="#48FE66"/>
+    </radialGradient>
+  </defs>
+</svg>
+

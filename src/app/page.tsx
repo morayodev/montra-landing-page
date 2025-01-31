@@ -1,7 +1,7 @@
 "use client";
 import BusinessSection from "@/component/ui/business";
-import Hero from "@/component/ui/hero";
 import NavBar from "@/component/ui/navbar";
+import Personal from "@/component/ui/personal";
 
 export default function Home() {
   return (
@@ -9,7 +9,7 @@ export default function Home() {
       <NavBar />
 
       {/* //second section */}
-      <Hero />
+      <Personal />
 
       <BusinessSection />
     </div>
