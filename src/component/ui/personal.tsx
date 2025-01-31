@@ -88,7 +88,7 @@ export default function Personal() {
               className="text-[#425466]"
             />
           </div>
-          <div>
+          <div className="mt-[70px]">
             <div className="relative ">
               <Image src={vec1} alt="vec1" />
               <Image src={vec2} alt="vec3" className="absolute top-[0px] left-10" />
