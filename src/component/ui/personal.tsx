@@ -12,48 +12,21 @@ import { FaChevronRight } from "react-icons/fa";
 import { ActiveBox, InactiveBox } from "./activeBox";
 
 export default function Personal() {
-  const images = [vec1, vec2, vec3];
-
-  const [isAnimatingVec1, setIsAnimatingVec1] = useState(true);
-  const [isAnimatingVec2, setIsAnimatingVec2] = useState(true);
-  const [isAnimatingVec3, setIsAnimatingVec3] = useState(true);
+  const [step, setStep] = useState(1);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsAnimatingVec1(false);
-    }, 2500); // Adjust based on your SVG animation duration
+    const interval = setInterval(() => {
+      setStep((prevStep) => (prevStep % 3) + 1);
+    }, 3000); // Adjust based on total animation cycle duration
 
-    return () => clearTimeout(timer); // Cleanup
-  }, []);
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsAnimatingVec2(false);
-    }, 4500); // Adjust based on your SVG animation duration
-
-    return () => clearTimeout(timer); // Cleanup
-  }, []);
-
-  useEffect(() => {
-    const recycle = setInterval(() => {
-      setIsActiveIndex((prevState) => (prevState + 1) % images.length);
-    }, 2000); // Adjust based on your SVG animation duration
-
-    return () => clearTimeout(recycle); // Cleanup
-  }, [images.length]);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsAnimatingVec3(false);
-    }, 7500); // Adjust based on your SVG animation duration
-
-    return () => clearTimeout(timer); // Cleanup
-  }, []);
+    return () => clearInterval(interval); // Cleanup
+  }, [step]);
 
   return (
     <div className="bg-tertiary-default">
       <div className="max-w-[1200px]  mx-auto ">
-        <div className="flex   gap-40 py-20">
-          <div className="w-[35%]">
+        <div className="flex   gap-24 py-20">
+          <div className="w-[40%]">
             <Typography variant="p" text="Montra - Personal" className="pb-4 text-secondary-default font-semibold" />
 
             <Typography
@@ -88,201 +61,173 @@ export default function Personal() {
               className="text-[#425466]"
             />
           </div>
-          <div className="mt-[70px]">
+          <div className="mt-[70px] w-[60%]">
             <div className="relative ">
-              <Image src={vec1} alt="vec1" />
-              <Image src={vec2} alt="vec3" className="absolute top-[0px] left-10" />
-              <Image src={vec3} alt="vec3" className="absolute top-[-4px] " />
+              {step === 1 && <Image src={vec1} alt="vec1" className="absolute  right-[80px]" />}
+              {step === 2 && <Image src={vec2} alt="vec3" className="absolute  right-[90px]" />}
+              {step === 3 && <Image src={vec3} alt="vec3" className="absolute  right-[90px]" />}
 
-              {isAnimatingVec1 ? (
-                <>
-                  <div className="absolute  top-[120px] left-[-45px] mt-[20px]">
+              {step === 1 && (
+                <div className="flex gap-[48px] absolute">
+                  <div className="mt-[150px]">
                     <ActiveBox text="Montra Customer" variant="p" image={customer} />
                   </div>
-                  <div className="absolute  top-[28px] left-[80px]">
+                  <div className="mt-[30px]">
                     <ActiveBox text="Mobile or Contact " variant="p" image={customer} />
                   </div>
-                  <div className="absolute top-[-60px] left-[250px]">
+                  <div className="mt-[-50px]">
                     <ActiveBox text="Montra Account " variant="p" image={customer} />
                   </div>
-                  <div className="absolute bottom-[-35px] right-[60px]">
+                  <div className="mt-[140px] ">
                     <ActiveBox text="Payment Authorization" variant="p" image={customer} />
                   </div>
-                  <div className="absolute top-[25px] right-[-80px]">
+                  <div className="mt-[30px] ">
                     <ActiveBox text="Montra Customers" variant="p" image={customer} />
                   </div>
-                </>
-              ) : (
+                </div>
+              )}
+
+              {(step === 2 || step === 3) && (
+                <div className="flex gap-[48px] absolute">
+                  <div className="mt-[150px]">
+                    <InactiveBox image={customer} />
+                  </div>
+                  <div className="mt-[30px]">
+                    <InactiveBox image={customer} />
+                  </div>
+                  <div className="mt-[-50px]">
+                    <InactiveBox image={customer} />
+                  </div>
+                  <div className="mt-[140px] ">
+                    <InactiveBox image={customer} />
+                  </div>
+                  <div className="mt-[30px] ">
+                    <InactiveBox image={customer} />
+                  </div>
+                </div>
+              )}
+              {step === 2 && (
                 <>
-                  <div className="absolute  top-[120px] left-[-45px] mt-[20px]">
-                    <InactiveBox image={customer} />
-                  </div>
-                  <div className="absolute  top-[28px] left-[80px]">
-                    <InactiveBox image={customer} />
-                  </div>
-                  <div className="absolute top-[-60px] left-[250px]">
-                    <InactiveBox image={customer} />
-                  </div>
-                  <div className="absolute bottom-[-35px] right-[60px]">
-                    <InactiveBox image={customer} />
-                  </div>
-                  <div className="absolute top-[25px] right-[-80px]">
-                    <InactiveBox image={customer} />
+                  <div className="flex gap-[48px] absolute">
+                    <div className="mt-[150px]">
+                      <ActiveBox text="Montra Customer" variant="p" image={customer} />
+                    </div>
+                    <div className="mt-[150px]">
+                      <ActiveBox text="Scan & Pay " variant="p" image={customer} />
+                    </div>
+                    <div>
+                      <div className="mt-[-50px]">
+                        <ActiveBox text="Montra Account " variant="p" image={customer} />
+                      </div>
+                      <div className="mt-[20px]">
+                        <ActiveBox text="Installment " variant="p" image={customer} />
+                      </div>
+
+                      <div className="mt-[20px]">
+                        <ActiveBox text="Link Card" variant="p" image={customer} />
+                      </div>
+                      <div className="mt-[20px]">
+                        <ActiveBox text="Linked Banks" variant="p" image={customer} />
+                      </div>
+                    </div>
+
+                    <div className="mt-[140px] ">
+                      <ActiveBox text="Payment Authorization" variant="p" image={customer} />
+                    </div>
+                    <div className="mt-[140px]">
+                      <ActiveBox text="Montra Agents" variant="p" image={customer} />
+                    </div>
                   </div>
                 </>
               )}
-              {isAnimatingVec2 ? (
-                <div className="flex gap-[48px]">
-                  {/* <div className="flex gap-[48px]"> */}
-                  <div className="absolute  top-[120px] left-[-45px] mt-[20px]">
-                    <ActiveBox text="Montra Customer" variant="p" image={customer} />
-                  </div>
-                  <div className="absolute  top-[130px] left-[80px] mt-[10px]">
-                    <ActiveBox text="Scan & Pay " variant="p" image={customer} />
-                  </div>
-                  <div className="absolute top-[-60px] left-[250px]">
-                    <ActiveBox
-                      text="Montra Account "
-                      variant="p"
-                      image={customer}
-                      // className="absolute top-[-40px] left-[250px]"
-                    />
-                  </div>
-                  <div className="absolute top-[70px] left-[250px]">
-                    {/* <div className=""> */}
-                    <ActiveBox text="Installment" variant="p" image={customer} />
-                  </div>
-                  <div className="absolute top-[200px] left-[250px]">
-                    <ActiveBox
-                      text="Link Card"
-                      variant="p"
-                      image={customer}
-                      // className="absolute top-[3rem] right-[-20px]"
-                    />
-                  </div>
-                  <div className="absolute top-[320px] left-[250px]">
-                    <ActiveBox
-                      text="Linked Banks"
-                      variant="p"
-                      image={customer}
-                      // className="absolute top-[3rem] right-[-20px]"
-                    />
-                  </div>
-
-                  <div className="absolute bottom-[-35px] right-[-80px]">
-                    {/* <div className=""> */}
-                    <ActiveBox
-                      text="Money Merchants"
-                      variant="p"
-                      image={customer}
-                      // className="absolute top-[10rem] right-[2.5rem]"
-                    />
-                  </div>
-                </div>
-              ) : (
+              {(step === 1 || step === 3) && (
                 <>
-                  <div className="absolute  top-[120px] left-[-45px] mt-[20px]">
-                    <InactiveBox image={customer} />
-                  </div>
-                  <div className="absolute  top-[130px] left-[80px] mt-[10px]">
-                    <InactiveBox image={customer} />
-                  </div>
-                  <div className="absolute top-[-60px] left-[250px]">
-                    <InactiveBox image={customer} />
-                  </div>
-                  <div className="absolute top-[70px] left-[250px]">
-                    {/* <div className=""> */}
-                    <InactiveBox image={customer} />
-                  </div>
-                  <div className="absolute top-[200px] left-[250px]">
-                    <InactiveBox image={customer} />
-                  </div>
-                  <div className="absolute top-[320px] left-[250px]">
-                    <InactiveBox image={customer} />
-                  </div>
+                  <div className="flex gap-[48px] absolute">
+                    <div className="mt-[150px]">
+                      <InactiveBox image={customer} />
+                    </div>
+                    <div className="mt-[150px]">
+                      <InactiveBox image={customer} />
+                    </div>
+                    <div>
+                      <div className="mt-[-50px]">
+                        <InactiveBox image={customer} />
+                      </div>
+                      <div className="mt-[20px]">
+                        <InactiveBox image={customer} />
+                      </div>
 
-                  <div className="absolute bottom-[-35px] right-[-80px]">
-                    {/* <div className=""> */}
-                    <InactiveBox image={customer} />
+                      <div className="mt-[20px]">
+                        <InactiveBox image={customer} />
+                      </div>
+                      <div className="mt-[20px]">
+                        <InactiveBox image={customer} />
+                      </div>
+                    </div>
+
+                    <div className="mt-[140px] ">
+                      <InactiveBox image={customer} />
+                    </div>
+                    <div className="mt-[140px]">
+                      <InactiveBox image={customer} />
+                    </div>
                   </div>
                 </>
               )}
-              {isAnimatingVec3 ? (
-                <div className="flex gap-[48px]">
-                  {/* <div className="flex gap-[48px]"> */}
-                  <div className="absolute  top-[120px] left-[-45px] mt-[20px]">
+
+              {/* //third */}
+              {step === 3 && (
+                <div className="flex gap-[48px] absolute">
+                  <div className="mt-[150px]">
                     <ActiveBox text="Montra Customer" variant="p" image={customer} />
                   </div>
-                  <div className="absolute top-[250px] left-[80px] ">
-                    <ActiveBox
-                      text="Bank Transfer "
-                      variant="p"
-                      image={customer}
-                      // className="absolute top-8 left-[100px]"
-                    />
+                  <div className="mt-[270px]">
+                    <ActiveBox text="Bank Transfer " variant="p" image={customer} />
                   </div>
-                  <div className="absolute top-[320px] left-[250px]">
-                    <ActiveBox
-                      text="Linked Banks"
-                      variant="p"
-                      image={customer}
-                      // className="absolute top-[3rem] right-[-20px]"
-                    />
+                  <div>
+                    <div className="mt-[-50px]">
+                      <ActiveBox text="Montra Account " variant="p" image={customer} />
+                    </div>
+
+                    <div className="mt-[250px]">
+                      <ActiveBox text="Linked Banks" variant="p" image={customer} />
+                    </div>
                   </div>
-                  <div className="absolute top-[-60px] left-[250px]">
-                    <ActiveBox
-                      text="Montra Account "
-                      variant="p"
-                      image={customer}
-                      // className="absolute top-[-40px] left-[250px]"
-                    />
+
+                  <div className="mt-[140px] ">
+                    <ActiveBox text="Payment Authorization" variant="p" image={customer} />
                   </div>
-                  <div className="absolute bottom-[-35px] right-[60px]">
-                    {/* <div className=""> */}
-                    <ActiveBox
-                      text="Payment Authorization"
-                      variant="p"
-                      image={customer}
-                      // className="absolute top-[10rem] right-[2.5rem]"
-                    />
-                  </div>
-                  <div className="absolute top-[25px] right-[-80px]">
-                    <ActiveBox
-                      text="Montra Customers"
-                      variant="p"
-                      image={customer}
-                      // className="absolute top-[3rem] right-[-20px]"
-                    />
-                  </div>
-                  <div className="absolute top-[250px] right-[-80px]">
-                    <ActiveBox text="Other Customers" variant="p" image={customer} />
+                  <div className="mt-[270px] ">
+                    <ActiveBox text="others Bank" variant="p" image={customer} />
                   </div>
                 </div>
-              ) : (
-                <>
-                  <div className="absolute  top-[120px] left-[-45px] mt-[20px]">
+              )}
+
+              {(step === 1 || step === 2) && (
+                <div className="flex gap-[48px] absolute">
+                  <div className="mt-[150px]">
                     <InactiveBox image={customer} />
                   </div>
-                  <div className="absolute top-[250px] left-[80px] ">
+                  <div className="mt-[270px]">
                     <InactiveBox image={customer} />
                   </div>
-                  <div className="absolute top-[320px] left-[250px]">
+                  <div>
+                    <div className="mt-[-50px]">
+                      <InactiveBox image={customer} />
+                    </div>
+
+                    <div className="mt-[20px]">
+                      <InactiveBox image={customer} />
+                    </div>
+                  </div>
+
+                  <div className="mt-[140px] ">
                     <InactiveBox image={customer} />
                   </div>
-                  <div className="absolute top-[-60px] left-[250px]">
+                  <div className="mt-[270px] ">
                     <InactiveBox image={customer} />
                   </div>
-                  <div className="absolute bottom-[-35px] right-[60px]">
-                    {/* <div className=""> */}
-                    <InactiveBox image={customer} />
-                  </div>
-                  <div className="absolute top-[25px] right-[-80px]">
-                    <InactiveBox image={customer} />
-                  </div>
-                  <div className="absolute top-[250px] right-[-80px]">
-                    <InactiveBox image={customer} />
-                  </div>
-                </>
+                </div>
               )}
             </div>
           </div>
